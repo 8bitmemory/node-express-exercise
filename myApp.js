@@ -77,7 +77,12 @@ app.route("/name").get((req, res) => {
   
 /** 11) Get ready for POST Requests - the `body-parser` */
 // place it before all the routes !
-
+app.post('/name',(req, res) => {
+    var firstName = req.body.first;
+    var lastName = req.body.last;
+    var firstLastName = firstName + " " + lastName;
+    res.send({ 'name' : firstLastName });
+});
 
 /** 12) Get data form POST  */
 
