@@ -9,7 +9,11 @@ app.get("/",(req,res)=> {
   
 
 // --> 7)  Mount the Logger middleware here
-
+app.use(function middleware(req, res, next) {
+    var string = req.method + ' ' + req.path + ' - ' + req.ip;
+    console.log(string);
+    next();
+});
 
 // --> 11)  Mount the body-parser middleware  here
 
