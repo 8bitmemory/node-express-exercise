@@ -41,7 +41,8 @@ app.get('/json',(req,res) => {
 });
 
 /** 6) Use the .env file to configure the app */
- 
+require('dotenv').config({ path: __dirname+"/.env" })
+
  
 /** 7) Root-level Middleware - A logger */
 //  place it before all the routes !
